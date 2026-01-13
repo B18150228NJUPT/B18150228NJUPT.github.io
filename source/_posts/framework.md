@@ -1,13 +1,3 @@
----
-title: framework
-date: 2026-01-13 20:09:38
-tags: 
-  - java
-  - framework
-categories:
-  - java
-  - framework
----
 # spring-framework
 ## bean
 org.springframework.beans.factory.config.BeanDefinition
@@ -1993,11 +1983,11 @@ route.train_id=train.id
 weekly_weather.station_id=station.id
 
 【问题】
-How many different services are provided by all stations?
-【Answer】
-```json
-["station"]
-```
+  How many different services are provided by all stations?
+  【Answer】
+  ```json
+  ["station"]
+  ```
 
 ===============
 【DB_ID】 hr_1
@@ -2069,9 +2059,9 @@ locations.COUNTRY_ID=countries.COUNTRY_ID
 【问题】
 display the full name (first and last name ) of employee with ID and name of the country presently where (s)he is working.
 【Answer】
-```json
-["employees", "departments", "countries", "locations"]
-```
+  ```json
+  ["employees", "departments", "countries", "locations"]
+  ```
 
 ===============
 {schema_info}
@@ -6297,6 +6287,4 @@ private final Semaphore waitSasl = new Semaphore(0);
 
 
 <font style="background-color:#FFFFFF;"></font>
-
-
 
