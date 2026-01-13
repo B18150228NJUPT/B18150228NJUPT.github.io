@@ -1,3 +1,13 @@
+---
+title: framework
+date: 2026-01-13 20:09:38
+tags: 
+  - java
+  - framework
+categories:
+  - java
+  - framework
+---
 # spring-framework
 ## bean
 org.springframework.beans.factory.config.BeanDefinition
@@ -1933,148 +1943,7 @@ List all product name from Australia Bike Retailer order by product ID. Australi
 ```
 
 #### select table sql promt
-```plain
-你现在是一位数据分析师，你的任务是分析用户的问题和数据库schema，
-数据库schema包括表名、表描述、表之间的外键依赖，每张表中包含多个列的列名、列描述和主键信息，
-现在你需要根据提供的数据库信息和用户的问题，分析与用户问题相关的table，给出相关table的名称。
-[Instruction]:
-1. 排除与用户问题完全不相关的table
-2. 保留可能对回答用户问题有帮助的表
-3. 结果以json形式输出，用```json和```包围起来
-4. 直接输出结果，不要做多余的分析
-
-以下样例供你参考：
-
-【DB_ID】 station_weather
-# Table: train
-[
-(id:TEXT, 火车编号, Primary Key.),
-(train_number:TEXT, 火车车次, Examples: [56701]),
-(name:TEXT, 火车的名称),
-(origin:TEXT, 出发站, Examples: [Kanniyakumari, Chennai, Trivandrum]),
-(destination:TEXT, 到达站, Examples: [Kanniyakumari, Chennai, Trivandrum]),
-(time:TEXT, 发车时间, Examples: [4:49, 22:10, 21:49]),
-(interval:TEXT, 火车的运行频率, Examples: [Daily])
-]
-# Table: station
-[
-(id:TEXT, 车站编号, Primary Key),
-(network_name:TEXT, 车站所属网络的名称, Examples: [Croxley, Chorleywood, Cheshunt]),
-(services:TEXT, 提供的服务),
-(local_authority:TEXT, 负责该车站区域的地方当局, Examples: [Three Rivers, Chiltern, Broxbourne])
-]
-# Table: route
-[
-(train_id:TEXT, 火车编号),
-(station_id:TEXT, 车站编号)
-]
-# Table: weekly_weather
-[
-(station_id::TEXT, 车站编号),
-(day_of_week:TEXT, 星期, Examples: [Tuesday, Monday, Wednesday]),
-(high_temperature:INT, 最高气温, Examples: [59, 55, 58]),
-(low_temperature:INT, 最低气温, Examples: [54, 52, 55]),
-(precipitation:DOUBLE, 降水量, Examples: [50.0, 90.0, 70.0]),
-(wind_speed_mph:INT, 风速, Examples: [22, 14, 13])
-]
-【Foreign keys】
-route.station_id=station.id
-route.train_id=train.id
-weekly_weather.station_id=station.id
-
-【问题】
-  How many different services are provided by all stations?
-  【Answer】
-  ```json
-  ["station"]
-  ```
-
-===============
-【DB_ID】 hr_1
-# Table: regions
-[
-(REGION_ID:TEXT, Primary Key),
-(REGION_NAME:TEXT)
-]
-# Table: countries
-[
-(COUNTRY_ID:TEXT, Primary Key),
-(COUNTRY_NAME:TEXT),
-(REGION_ID:TEXT)
-]
-# Table: departments
-[
-(DEPARTMENT_ID:TEXT, Primary Key),
-(DEPARTMENT_NAME:TEXT, department name. Examples: [Treasury, Shipping, Shareholder Services]),
-(MANAGER_ID:TEXT),
-(LOCATION_ID:TEXT)
-]
-# Table: jobs
-[
-(JOB_ID:TEXT, Primary Key),
-(JOB_TITLE:TEXT),
-(MIN_SALARY:INT, min salary. Examples: [4000, 8200, 4200]),
-(MAX_SALARY:INT, max salary. Examples: [9000, 16000, 15000])
-]
-# Table: employees
-[
-(EMPLOYEE_ID:TEXT),
-(FIRST_NAME:TEXT, Examples: [Peter, John, David]),
-(LAST_NAME:TEXT, Examples: [Taylor, Smith, King]),
-(EMAIL:TEXT),
-(PHONE_NUMBER:TEXT, Examples: [650.509.4876]),
-(HIRE_DATE:DATE, Examples: [1987-10-01]),
-(JOB_ID:TEXT),
-(SALARY:TEXT, Examples: [2500, 10000, 9000]),
-(COMMISSION_PCT:DOUBLE, Examples: [0, 0.3, 0.25]),
-(MANAGER_ID:TEXT),
-(DEPARTMENT_ID:TEXT)
-]
-# Table: job_history
-[
-(EMPLOYEE_ID:TEXT),
-(START_DATE:DATE, Examples: [1999-01-01]),
-(END_DATE:DATE, Examples: [1999-12-31]),
-(JOB_ID:TEXT),
-(DEPARTMENT_ID:TEXT)
-]
-# Table: locations
-[
-(LOCATION_ID:TEXT),
-(STREET_ADDRESS:TEXT),
-(POSTAL_CODE:TEXT, Examples: [YSW 9T2, M5V 2L7, 99236]),
-(CITY:TEXT, Examples: [Whitehorse, Venice, Utrecht]),
-(STATE_PROVINCE:TEXT, Examples: [Yukon, Washington, Utrecht]),
-(COUNTRY_ID:TEXT)
-]
-【Foreign keys】
-countries.REGION_ID=regions.REGION_ID
-employees.JOB_ID=jobs.JOB_ID
-employees.DEPARTMENT_ID=departments.DEPARTMENT_ID
-job_history.JOB_ID=jobs.JOB_ID
-job_history.DEPARTMENT_ID=departments.DEPARTMENT_ID
-job_history.EMPLOYEE_ID=employees.EMPLOYEE_ID
-locations.COUNTRY_ID=countries.COUNTRY_ID
-
-【问题】
-display the full name (first and last name ) of employee with ID and name of the country presently where (s)he is working.
-【Answer】
-  ```json
-  ["employees", "departments", "countries", "locations"]
-  ```
-
-===============
-{schema_info}
-
-【问题】
-{question}
-
-【参考信息】
-{evidence}
-
-【Answer】
-```
-
+<details class="lake-collapse"><summary id="u7c21550d"></summary><p id="udcca2072" class="ne-p"><span class="ne-text">你现在是一位数据分析师，你的任务是分析用户的问题和数据库schema，<br /></span><span class="ne-text">数据库schema包括表名、表描述、表之间的外键依赖，每张表中包含多个列的列名、列描述和主键信息，<br /></span><span class="ne-text">现在你需要根据提供的数据库信息和用户的问题，分析与用户问题相关的table，给出相关table的名称。<br /></span><span class="ne-text">[Instruction]:<br /></span><span class="ne-text">1. 排除与用户问题完全不相关的table<br /></span><span class="ne-text">2. 保留可能对回答用户问题有帮助的表<br /></span><span class="ne-text">3. 结果以json形式输出，用```json和```包围起来<br /></span><span class="ne-text">4. 直接输出结果，不要做多余的分析<br /><br /></span><span class="ne-text">以下样例供你参考：<br /><br /></span><span class="ne-text">【DB_ID】 station_weather<br /></span><span class="ne-text"># Table: train<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(id:TEXT, 火车编号, Primary Key.),<br /></span><span class="ne-text">(train_number:TEXT, 火车车次, Examples: [56701]),<br /></span><span class="ne-text">(name:TEXT, 火车的名称),<br /></span><span class="ne-text">(origin:TEXT, 出发站, Examples: [Kanniyakumari, Chennai, Trivandrum]),<br /></span><span class="ne-text">(destination:TEXT, 到达站, Examples: [Kanniyakumari, Chennai, Trivandrum]),<br /></span><span class="ne-text">(time:TEXT, 发车时间, Examples: [4:49, 22:10, 21:49]),<br /></span><span class="ne-text">(interval:TEXT, 火车的运行频率, Examples: [Daily])<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: station<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(id:TEXT, 车站编号, Primary Key),<br /></span><span class="ne-text">(network_name:TEXT, 车站所属网络的名称, Examples: [Croxley, Chorleywood, Cheshunt]),<br /></span><span class="ne-text">(services:TEXT, 提供的服务),<br /></span><span class="ne-text">(local_authority:TEXT, 负责该车站区域的地方当局, Examples: [Three Rivers, Chiltern, Broxbourne])<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: route<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(train_id:TEXT, 火车编号),<br /></span><span class="ne-text">(station_id:TEXT, 车站编号)<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: weekly_weather<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(station_id::TEXT, 车站编号),<br /></span><span class="ne-text">(day_of_week:TEXT, 星期, Examples: [Tuesday, Monday, Wednesday]),<br /></span><span class="ne-text">(high_temperature:INT, 最高气温, Examples: [59, 55, 58]),<br /></span><span class="ne-text">(low_temperature:INT, 最低气温, Examples: [54, 52, 55]),<br /></span><span class="ne-text">(precipitation:DOUBLE, 降水量, Examples: [50.0, 90.0, 70.0]),<br /></span><span class="ne-text">(wind_speed_mph:INT, 风速, Examples: [22, 14, 13])<br /></span><span class="ne-text">]<br /></span><span class="ne-text">【Foreign keys】<br /></span><span class="ne-text">route.station_id=station.id<br /></span><span class="ne-text">route.train_id=train.id<br /></span><span class="ne-text">weekly_weather.station_id=station.id<br /><br /></span><span class="ne-text">【问题】<br /></span><span class="ne-text">How many different services are provided by all stations?<br /></span><span class="ne-text">【Answer】<br /></span><span class="ne-text">```json<br /></span><span class="ne-text">[&quot;station&quot;]<br /></span><span class="ne-text">```<br /><br /></span><span class="ne-text">===============<br /></span><span class="ne-text">【DB_ID】 hr_1<br /></span><span class="ne-text"># Table: regions<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(REGION_ID:TEXT, Primary Key),<br /></span><span class="ne-text">(REGION_NAME:TEXT)<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: countries<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(COUNTRY_ID:TEXT, Primary Key),<br /></span><span class="ne-text">(COUNTRY_NAME:TEXT),<br /></span><span class="ne-text">(REGION_ID:TEXT)<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: departments<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(DEPARTMENT_ID:TEXT, Primary Key),<br /></span><span class="ne-text">(DEPARTMENT_NAME:TEXT, department name. Examples: [Treasury, Shipping, Shareholder Services]),<br /></span><span class="ne-text">(MANAGER_ID:TEXT),<br /></span><span class="ne-text">(LOCATION_ID:TEXT)<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: jobs<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(JOB_ID:TEXT, Primary Key),<br /></span><span class="ne-text">(JOB_TITLE:TEXT),<br /></span><span class="ne-text">(MIN_SALARY:INT, min salary. Examples: [4000, 8200, 4200]),<br /></span><span class="ne-text">(MAX_SALARY:INT, max salary. Examples: [9000, 16000, 15000])<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: employees<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(EMPLOYEE_ID:TEXT),<br /></span><span class="ne-text">(FIRST_NAME:TEXT, Examples: [Peter, John, David]),<br /></span><span class="ne-text">(LAST_NAME:TEXT, Examples: [Taylor, Smith, King]),<br /></span><span class="ne-text">(EMAIL:TEXT),<br /></span><span class="ne-text">(PHONE_NUMBER:TEXT, Examples: [650.509.4876]),<br /></span><span class="ne-text">(HIRE_DATE:DATE, Examples: [1987-10-01]),<br /></span><span class="ne-text">(JOB_ID:TEXT),<br /></span><span class="ne-text">(SALARY:TEXT, Examples: [2500, 10000, 9000]),<br /></span><span class="ne-text">(COMMISSION_PCT:DOUBLE, Examples: [0, 0.3, 0.25]),<br /></span><span class="ne-text">(MANAGER_ID:TEXT),<br /></span><span class="ne-text">(DEPARTMENT_ID:TEXT)<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: job_history<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(EMPLOYEE_ID:TEXT),<br /></span><span class="ne-text">(START_DATE:DATE, Examples: [1999-01-01]),<br /></span><span class="ne-text">(END_DATE:DATE, Examples: [1999-12-31]),<br /></span><span class="ne-text">(JOB_ID:TEXT),<br /></span><span class="ne-text">(DEPARTMENT_ID:TEXT)<br /></span><span class="ne-text">]<br /></span><span class="ne-text"># Table: locations<br /></span><span class="ne-text">[<br /></span><span class="ne-text">(LOCATION_ID:TEXT),<br /></span><span class="ne-text">(STREET_ADDRESS:TEXT),<br /></span><span class="ne-text">(POSTAL_CODE:TEXT, Examples: [YSW 9T2, M5V 2L7, 99236]),<br /></span><span class="ne-text">(CITY:TEXT, Examples: [Whitehorse, Venice, Utrecht]),<br /></span><span class="ne-text">(STATE_PROVINCE:TEXT, Examples: [Yukon, Washington, Utrecht]),<br /></span><span class="ne-text">(COUNTRY_ID:TEXT)<br /></span><span class="ne-text">]<br /></span><span class="ne-text">【Foreign keys】<br /></span><span class="ne-text">countries.REGION_ID=regions.REGION_ID<br /></span><span class="ne-text">employees.JOB_ID=jobs.JOB_ID<br /></span><span class="ne-text">employees.DEPARTMENT_ID=departments.DEPARTMENT_ID<br /></span><span class="ne-text">job_history.JOB_ID=jobs.JOB_ID<br /></span><span class="ne-text">job_history.DEPARTMENT_ID=departments.DEPARTMENT_ID<br /></span><span class="ne-text">job_history.EMPLOYEE_ID=employees.EMPLOYEE_ID<br /></span><span class="ne-text">locations.COUNTRY_ID=countries.COUNTRY_ID<br /><br /></span><span class="ne-text">【问题】<br /></span><span class="ne-text">  display the full name (first and last name ) of employee with ID and name of the country presently where (s)he is working.<br /></span><span class="ne-text">  【Answer】<br /></span><span class="ne-text">  ```json<br /></span><span class="ne-text">  [&quot;employees&quot;, &quot;departments&quot;, &quot;countries&quot;, &quot;locations&quot;]<br /></span><span class="ne-text">  ```<br /><br /></span><span class="ne-text">===============<br /></span><span class="ne-text">{schema_info}<br /><br /></span><span class="ne-text">【问题】<br /></span><span class="ne-text">{question}<br /><br /></span><span class="ne-text">【参考信息】<br /></span><span class="ne-text">{evidence}<br /><br /></span><span class="ne-text">【Answer】</span></p></details>
 
 
 #### extract date promt
