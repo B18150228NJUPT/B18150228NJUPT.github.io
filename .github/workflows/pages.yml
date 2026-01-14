@@ -3,7 +3,7 @@ name: Pages
 on:
   push:
     branches:
-      - deploy # default branch
+      - main # default branch
 
 jobs:
   build:
@@ -30,6 +30,17 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Check build output
+        run: |
+          echo "=== Public directory contents ==="
+          ls -la public/
+          echo "=== Check index.html ==="
+          if [ -f public/index.html ]; then
+            echo "index.html exists"
+            head -10 public/index.html
+          else
+            echo "index.html not found!"
+          fi
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
