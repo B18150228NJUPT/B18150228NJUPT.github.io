@@ -13,10 +13,12 @@ jobs:
         with:
           submodules: false
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Use Node.js v22.20.0
+      # 替换原 Node.js 配置部分
+      - name: Use Node.js v20.x (LTS)
         uses: actions/setup-node@v4
         with:
-          node-version: "v22.20.0"
+          node-version: "20"  # 改用 LTS 稳定版，避免兼容性问题
+          cache: "npm"        # 自动缓存 npm 依赖，无需单独配置 cache 步骤
       - name: Cache NPM dependencies
         uses: actions/cache@v4
         with:
@@ -24,12 +26,15 @@ jobs:
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-node-
-      - name: Clean Dependencies
-        run: npm run clean
+      # 替换原 Clean/Install/Build 步骤
+      - name: Install Hexo CLI globally
+        run: npm install -g hexo-cli  # 全局安装 Hexo 脚手架（必须）
+      - name: Clean old build files
+        run: hexo clean  # 替换 npm run clean，使用 Hexo 原生清理命令
       - name: Install Dependencies
         run: npm install
-      - name: Build
-        run: npm run build
+      - name: Build Hexo static files
+        run: hexo generate  # 替换 npm run build，使用 Hexo 原生构建命令
       - name: Check build output
         run: |
           echo "=== Public directory contents ==="
