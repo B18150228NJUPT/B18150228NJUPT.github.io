@@ -103,3 +103,4 @@ theme: butterfly
 deploy:
   type: git
   repo: https://github.com/B18150228NJUPT/B18150228NJUPT.github.io.git
+  branch: main
