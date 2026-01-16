@@ -1,4 +1,217 @@
-# Avatar
+nav:
+  # Navigation bar logo image
+#  logo: /preview.jpg
+  display_title: true
+  display_post_title: true
+  # Whether to fix navigation bar
+  fixed: false
+
+menu:
+  Home: / || fas fa-home
+  Archives: /archives/ || fas fa-archive
+  Tags: /tags/ || fas fa-tags
+  Categories: /categories/ || fas fa-folder-open
+  List||fas fa-list:
+    Music: /music/ || fas fa-music
+    Movie: /movies/ || fas fa-video
+  Link: /link/ || fas fa-link
+  About: /about/ || fas fa-heart
+
+code_blocks:
+  # Code block theme: darker / pale night / light / ocean / false
+  theme: light
+  macStyle: false
+  # Code block height limit (unit: px)
+  height_limit: false
+  word_wrap: false
+
+  # Toolbar
+  copy: true
+  language: true
+  # true: shrink the code blocks | false: expand the code blocks | none: expand code blocks and hide the button
+  shrink: false
+  fullpage: false
+
 avatar:
   img: /img/avatar.png
-  effect: false
+  effect: false # 頭像會一直轉圈
+
+index_top_img_height: 400px
+
+# 主頁subtitle
+subtitle:
+  enable: true
+  # Typewriter Effect (打字效果)
+  effect: true
+  # Customize typed.js
+  # https://github.com/mattboldt/typed.js/#customization
+  typed_option:
+  # source 調用第三方服務
+  # false 關閉調用
+  # 1  調用一言網的一句話（簡體） https://hitokoto.cn/
+  # 2  調用一句網（簡體） http://yijuzhan.com/
+  # 3  調用今日詩詞（簡體） https://www.jinrishici.com/
+  # subtitle 會先顯示 source , 再顯示 sub 的內容
+  source: 3
+  # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
+#  sub:
+#    - 今日事&#44;今日畢
+#    - Never put off till tomorrow what you can do today
+toc:
+  post: true
+  page: false
+  number: false
+  expand: false
+  # Only for post
+  style_simple: false
+  scroll_percent: true
+
+#top_img: /img/preview.jpg
+
+# footer是否顯示圖片背景(與top_img一致)
+footer_img: true
+
+
+#top_img: orange
+
+aside:
+  enable: true
+  hide: false
+  # Show the button to hide the aside in bottom right button
+  button: true
+  mobile: true
+  # Position: left / right
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description:
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/B18150228NJUPT
+  card_announcement:
+    enable: true
+    content: This is my Blog
+  card_recent_post:
+    enable: true
+    # If set 0 will show all
+    limit: 5
+    # Sort: date / updated
+    sort: date
+    sort_order:
+  card_newest_comments:
+    enable: false
+    sort_order:
+    limit: 6
+    # Unit: mins, save data to localStorage
+    storage: 10
+    avatar: true
+  card_categories:
+    enable: true
+    # If set 0 will show all
+    limit: 8
+    # Choose: none / true / false
+    expand: none
+    sort_order:
+  card_tags:
+    enable: true
+    # If set 0 will show all
+    limit: 40
+    color: false
+    # Order of tags, random/name/length
+    orderby: random
+    # Sort of order. 1, asc for ascending; -1, desc for descending
+    order: 1
+    sort_order:
+  card_archives:
+    enable: true
+    # Type: monthly / yearly
+    type: monthly
+    # Eg: YYYY年MM月
+    format: MMMM YYYY
+    # Sort of order. 1, asc for ascending; -1, desc for descending
+    order: -1
+    # If set 0 will show all
+    limit: 8
+    sort_order:
+  card_post_series:
+    enable: true
+    # The title shows the series name
+    series_title: false
+    # Order by title or date
+    orderBy: 'date'
+    # Sort of order. 1, asc for ascending; -1, desc for descending
+    order: -1
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    sort_order:
+    # Time difference between publish date and now
+    # Formal: Month/Day/Year Time or Year/Month/Day Time
+    # Leave it empty if you don't enable this feature
+    runtime_date:
+
+default_top_img: 'linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)'
+#default_top_img: /img/preview.jpg
+#top_img: 'linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)'
+
+comments:
+  # Up to two comments system, the first will be shown as default
+  # Leave it empty if you don't need comments
+  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
+  # Format of two comments system : Disqus,Waline
+  use:
+  # Display the comment name next to the button
+  text: true
+  # Lazyload: The comment system will be load when comment element enters the browser's viewport.
+  # If you set it to true, the comment count will be invalid
+  lazyload: false
+  # Display comment count in post's top_img
+  count: false
+  # Display comment count in Home Page
+  card_post_count: false
+chat:
+  # Choose: chatra/tidio/crisp
+  # Leave it empty if you don't need chat
+  use:
+  # Chat Button [recommend]
+  # It will create a button in the bottom right corner of website, and hide the origin button
+  rightside_button: false
+  # The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
+  button_hide_show: false
+# Typewriter Effect (打字效果)
+# https://github.com/disjukr/activate-power-mode
+activate_power_mode:
+  enable: true
+  colorful: true # open particle animation (冒光特效)
+  shake: true #  open shake (抖動特效)
+  mobile: false
+canvas_fluttering_ribbon:
+  enable: true
+  mobile: false # false 手機端不顯示 true 手機端顯示
+# 點擊出現愛心
+#click_heart:
+#  enable: true
+#  mobile: false
+# Snackbar 彈窗
+# https://github.com/polonel/SnackBar
+# position 彈窗位置
+# 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
+snackbar:
+  enable: true
+  position: bottom-left
+  bg_light: '#49b1f5' #light mode時彈窗背景
+  bg_dark: '#2d3035' #dark mode時彈窗背景
+aplayer:
+  meting: true
+  asset_inject: false
+# Inject the css and script (aplayer/meting)
+aplayerInject:
+  enable: true
+  per_page: true
